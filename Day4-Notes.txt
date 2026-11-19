@@ -1,0 +1,150 @@
+
+#include <stdio.h>
+int main()
+{
+ char *s;
+printf("Enter a Name : ");
+scanf("%s",s);
+printf("Length : %d",strlen(s);
+return 0;
+ }
+-------------------------
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+ char *s,*t;
+printf("Enter a Name : ");
+scanf("%s",s);
+strcpy(t,s);
+printf("Original : %s",s);
+printf("\nCopied : %s",t);
+return 0;
+ }
+---------------------
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+ char *s,*t;
+printf("Enter a Name : ");
+scanf("%s",s);
+printf("Enter a Name : ");
+scanf("%s",t);
+if(strcmp(t,s)==0)
+printf("Both are Same .");
+else
+printf("Both are not same");
+return 0;
+ }
+------------------------------------------------
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+ char *s,*t;
+printf("Enter a Name : ");
+scanf("%s",s);
+printf("Enter a Name : ");
+scanf("%s",t);
+strcat(t,s); // Concate two strings
+printf("Source : %s",s);
+printf("\nTarget : %s",t);
+return 0;
+ }
+------------------------------------
+ASCII - American Standard Code for Information interchange
+
+Every keys has an Ascii value. Why?
+
+Machine Can understand only 0 or 1
+
+There are 256 ascii code
+
+0 - Null
+1 to 31 - Non printable characters (ctrl , alt, arrows, etc ...)
+32 - Spacebar
+65 to 90 - Capital
+97 to 122 - Small 
+48 to 57- Numeric
+33 to 47 , 58 to 64 , 91 to 96 , 123 to 127 - Symbols
+From 128 reserved for extended ascii value
+----------------------------------------------
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+ char c;
+printf("Enter a Character : ");
+scanf("%c",&c);
+
+printf("Character is : %c and Ascii Code is : %d ", c, (int)c);
+return 0;
+ }
+--------------------------------------------------
+Exercise:
+input : S
+output : Capital
+
+input : 7
+output : Number
+
+input : s
+output : Small letters
+
+input : +
+output : Symbol
+
+input : esc
+output : Non printable or extended ascii
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

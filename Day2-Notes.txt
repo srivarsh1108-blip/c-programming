@@ -1,0 +1,419 @@
+https://meet.google.com/zoa-vyum-uyq
+-----------------------------------------------------
+Looping
+
+for syntax:
+
+for(initialization ; condition checking ; incre/decre)
+{
+
+}
+-----------------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int no;
+    char *s;
+    printf("Enter No : ");
+    scanf("%d",&no);
+    printf("Enter Name : ");
+    scanf("%s",s);
+    for(int i=1;i<=no;i++)
+       printf("\n%d.  %s",i,s);
+    return 0;
+}
+// i++ - increase one value
+-----------------------------------
+#include <stdio.h>
+
+int main()
+{
+    int no; 
+    printf("Enter No : ");
+    scanf("%d",&no); 
+    for(int i=1;i<=no;i=i+5)
+       printf("%d ,",i);
+    return 0;
+}
+--------------------------------
+Write the code to Print Table with proper formation
+Ex:
+1*5=5
+2*5=10
+.
+.
+10*5=50
+#include <stdio.h>
+
+int main()
+{
+    int no,table; 
+    printf("Enter No : ");
+    scanf("%d",&no); 
+    printf("Enter Table : ");
+    scanf("%d",&table); 
+    for(int i=1;i<=no;i++)
+       printf("\n%d * %d = %d",i,table,(i*table));
+    return 0;
+}
+
+--------------------------------
+ Sum of Natural Numbers
+
+#include <stdio.h>
+
+int main()
+{
+    int no,sum=0; 
+    printf("Enter No : ");
+    scanf("%d",&no); 
+    for(int i=1;i<=no;i++)
+     {
+     sum=sum+i;
+     }
+       printf("\nSum of Natural Number : %d ",sum);
+    return 0;
+}
+------------------------------------------------
+// find the  Factorial value
+int main()
+{
+    int no,sum=1; 
+    printf("Enter No : ");
+    scanf("%d",&no); 
+    for(int i=1;i<=no;i++)
+     {
+     sum=sum*i;
+     }
+       printf("\nFactorial Value : %d ",sum);
+    return 0;
+}
+------------------------------------------------
+#include <stdio.h>
+// Find prime number or not
+int main()
+{
+    int no,flag=0; 
+    printf("Enter No : ");
+    scanf("%d",&no); 
+    for(int i=2;i<no;i++)
+     {
+        if(no%i==0)
+        {
+            flag=1;
+            break; // come out from for loop
+        }
+    }
+    if(flag==0)
+      printf("\n%d is prime no  ",no);
+    else
+      printf("\n%d is not prime no  ",no);
+    
+    return 0;
+}
+------------------------------------------
+Skipping / Jumping Statement
+1. break 2. continue 3. goto
+-----------------------------------------
+// Example for goto
+#include <stdio.h>
+int main()
+{
+    int no; 
+    Label1:   // Marking the point
+    printf("Enter Even No : ");
+    scanf("%d",&no); 
+    if(no%2!=0)
+    goto Label1; // Jump to the Point
+    else
+    printf("Even No : %d",no);
+    return 0;
+}
+------------------------------------
+// Example for break
+#include <stdio.h>
+int main()
+{
+    int no,bp; 
+    printf("Enter   No : ");
+    scanf("%d",&no); // 10
+    printf("Enter   Breaking point : ");
+    scanf("%d",&bp);
+    for(int i=1;i<=no;i++)
+    {
+     if(i==bp)
+        break;
+    else
+    printf("%d ",i);
+     }
+    return 0;
+}
+---------------------------------------
+// Example for continue
+#include <stdio.h>
+int main()
+{
+    int no,bp; 
+    printf("Enter   No : ");
+    scanf("%d",&no); // 10
+    printf("Enter   Breaking point : ");
+    scanf("%d",&bp);
+    for(int i=1;i<=no;i++)
+    {
+     if(i%bp==0)
+        continue;
+    else
+    printf("%d ",i);
+     }
+    return 0;
+}
+---------------------------------------
+// Sum of Even numbers and sum of odd number using single for loop
+
+#include <stdio.h>
+int main()
+{
+    int no,i,j,evensum=0,oddsum=0; 
+    printf("Enter   No : ");
+    scanf("%d",&no);  // 10
+    for( i=1, j=2;i<=no && j<=no;i=i+2,j=j+2)
+    { 
+        evensum=evensum+j;
+        oddsum=oddsum+i;
+     }
+     printf("\nEven Sum : %d",evensum);
+     printf("\nOdd Sum : %d",oddsum);
+    return 0;
+}
+----------------------------------------------------
+// Fibonacci series
+1,2,3,5,8,13,21
+
+#include <stdio.h>
+int main()
+{
+    int no,i,f1=0,f2=1,f3=0; 
+    printf("Enter   No : ");
+    scanf("%d",&no);  
+    for( i=1;i<=no;i++)
+    { 
+    f3=f1+f2;
+     printf(" %d",f3);
+     f1=f2;
+     f2=f3;
+    }
+     return 0;
+}
+----------------------------------------------------
+1 2 3 5 8
+-------------------------------
+Armstrong Number
+
+1 5 3
+3*3*3	= 27
+5 * 5*5	= 125
+1 * 1*1	=     1
+               ---------------
+		   153
+               ---------------
+
+#include <stdio.h>
+int main()
+{
+    int no,sum=0,a,m; 
+    printf("Enter   No : ");
+    scanf("%d",&no);   // no - 153
+    m=no; // m - 153
+    while(no>0)
+    {
+        a=no%10;  // a - 3 , 5 , 1
+        sum=sum+(a*a*a); // sum - 27 , 152 , 153
+        no=no/10; // no -15 , 1 , <0
+    }
+    if(m==sum)
+            printf("Armstrong Number");
+    else
+            printf("Not armstrong number");
+    
+     return 0;
+}
+------------------------------------
+Nested if
+
+#include <stdio.h>
+int main()
+{
+    int a,b,c; 
+    printf("Enter  a : ");
+    scanf("%d",&a); 
+    printf("Enter  b : ");
+    scanf("%d",&b); 
+    printf("Enter  c : ");
+    scanf("%d",&c); 
+    if(a>b)
+    {
+		if(a>c)
+		printf("a is big");
+		else
+		printf("c is big");
+  }
+  else
+  {
+   		if(b>c)
+		printf("b is big");
+                else
+                printf("c is big");
+ }
+return 0;
+}
+------------------------------------------
+
+#include <stdio.h>
+int main()
+{
+    int a,b; 
+    printf("Enter  a : ");
+    scanf("%d",&a); 
+    printf("Enter  b : ");
+    scanf("%d",&b); 
+    (a>b)?printf("a is big"):printf("b is big");
+return 0;
+}
+
+// ? : - Ternary operators 
+// ? - True
+// : - False
+--------------------------------------
+Find the biggest from three variables using Ternary operators without using && and single statement main logic.
+
+
+#include <stdio.h>
+int main()
+{
+    int a,b,c; 
+    printf("Enter  a : ");
+    scanf("%d",&a); 
+    printf("Enter  b : ");
+    scanf("%d",&b); 
+     printf("Enter  c : ");
+    scanf("%d",&c); 
+        
+(a>b)?(a>c)?printf("a is big"):printf("c is big"):(b>c)?printf("b is big"):printf("c is big");
+return 0;
+}
+--------------------------------------
+Pattern programs using nested for Loop
+
+1. Number pattern
+2. Alphabet pattern
+3. Star Pattern
+4. Pyramid Pattern
+5. Hallow Pattern
+------------------------------------------
+#include <stdio.h>
+int main()
+{
+    int no,a=1; 
+    printf("Enter  no : ");
+    scanf("%d",&no);  // 5
+    for(int i=1;i<=no;i++) // outer for
+    {
+        for(int j=1;j<=i;j++) // inner for
+        {
+            printf(" %d",a++);
+        } // j++
+        printf("\n");
+    } // i++
+    return 0;
+}
+
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+#include <stdio.h>
+int main()
+{
+    int no; 
+    printf("Enter  no : ");
+    scanf("%d",&no); 
+    for(int i=no;i>=1;i--)
+    {
+        for(int j=1;j<=i;j++)
+        {
+            printf(" %d",j);
+        }
+        printf("\n");
+    }
+    for(int i=2;i<=no;i++)
+    {
+        for(int j=1;j<=i;j++)
+        {
+            printf(" %d",j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+Enter  no : 5
+ 1 2 3 4 5
+ 1 2 3 4
+ 1 2 3
+ 1 2
+ 1
+ 1 2
+ 1 2 3
+ 1 2 3 4
+ 1 2 3 4 5
+--------------------------------------
+#include <stdio.h>
+int main()
+{
+    int no; 
+    printf("Enter  no : ");
+    scanf("%d",&no); 
+    for(int i=1;i<=no;i++)
+    {
+        for(int s=i;s<=no;s++)
+        {
+         printf(" ");   
+        }
+        for(int j=1;j<=i;j++)
+        {
+            printf(" %d",j);
+        }
+        printf("\n");
+    } 
+   
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
